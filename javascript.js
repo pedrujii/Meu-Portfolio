@@ -4,3 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Particles.js carregado com sucesso!");
     });
 });
+
+ const button = document.querySelector('.button');
+
+    button.addEventListener('mousemove', (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        button.style.setProperty('--x', `${x}%`);
+        button.style.setProperty('--y', `${y}%`);
+    });

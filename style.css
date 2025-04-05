@@ -3,6 +3,44 @@
   margin: 0;
 }
 
+body{
+  max-width: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+@keyframes whatsappBtn{
+  0%{
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px lime;
+  }
+  50%{
+    border: 1px solid rgba(0, 255, 0, 0.247);
+    box-shadow: 0px 0px 0px lime;
+  }
+  100%{
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px lime;
+  }
+}
+
+@keyframes whatsappBtnHover{
+  0%{
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px lime;
+  }
+  50%{
+    border: 1px solid rgba(200, 252, 187, 0.836);
+    
+    box-shadow: 0px 0px 10px lime;
+  }
+  100%{
+    border: 1px solid rgb(255, 255, 255);
+    
+    box-shadow: 0px 0px 15px lime;
+  }
+}
+
 @keyframes inic {
   from{
     opacity: 0;
@@ -15,19 +53,36 @@
 header{
   z-index: 1;
   height: 4em;
+  gap: 25em;
   width: 100%;
   position: fixed;
-  gap: 10em;
   display: flex;
+  justify-content: center;
   text-align: center;
   background-color: rgb(20, 1, 36);
   box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.301);
 }
 
-header div{
-  width: 34%;
+.headerLeft{
   display: flex;
-  gap: 3em;
+  justify-content:flex-start;
+  gap: 10px;
+  margin-left: 1em;
+}
+
+.headerRight{
+  gap: 1em;
+}
+
+.headerLeft h1{
+  font-size: 1.5em;
+  font-family: monospace;
+  text-shadow: none;
+}
+
+header div{
+  width: 9%;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -48,7 +103,7 @@ header h1{
 
 .headerMiddle h1::after{
   content: url(logoWB.png);
-  transform:scale(0.09) scaleX(-1) translateX(-28em) translateY(-2em);
+  transform:scale(0.09) scaleX(-1) translateX(-27em) translateY(-2em);
   height: 0;
   width: 0;
   position: absolute;
@@ -58,10 +113,11 @@ header a {
   color: aliceblue;
   text-shadow: 0px 0px 10px magenta;
   background-color: rgba(0, 255, 255, 0.075);
-  padding: 5px;
+  padding: 8px;
   border-radius: 2em;
   font-family: monospace;
   font-size: 1.3em;
+  text-decoration: none;
 }
 
 body{
@@ -168,6 +224,20 @@ body {
   border-radius: 2em;
   box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.527);
   padding: 1em;
+  pointer-events:stroke;
+  transition: 0.4s box-shadow;
+}
+
+.item1:hover{
+  box-shadow: 0px 0px 30px rgb(9, 255, 0);
+}
+
+.item2:hover{
+  box-shadow: 0px 0px 30px rgb(255, 0, 234);
+}
+
+.item3:hover{
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.842);
 }
 
 button{
@@ -202,7 +272,7 @@ button{
   width: 100%;
   background-image: linear-gradient(transparent, rgba(0, 247, 255, 0.151));
   text-align: center;
-  height: 33em;
+  height: 30em;
 }
 
 #ttl, #ttl2, #ttl3{
@@ -242,6 +312,20 @@ button{
   align-content: center;
   justify-content: center;
   display: grid;
+  transition: 0.4s box-shadow;
+}
+
+.hab1:hover{
+  box-shadow: 0px 0px 30px rgba(0, 140, 255, 0.842);
+}
+.hab2:hover{
+  box-shadow: 0px 0px 30px rgb(255, 251, 0);
+}
+.hab3:hover{
+  box-shadow: 0px 0px 30px rgba(0, 140, 255, 0.842);
+}
+.hab4:hover{
+  box-shadow: 0px 0px 30px rgba(140, 0, 255, 0.842);
 }
 
 .Habilities div h1, h2{
@@ -252,7 +336,7 @@ button{
 .projetos{
   display: grid;
   justify-content: center;
-  background-image: linear-gradient( rgba(0, 247, 255, 0.151),rgba(0, 48, 136, 0.301), transparent);
+  background-image: linear-gradient( rgba(0, 247, 255, 0.151),rgba(0, 48, 136, 0.301), rgba(0, 255, 255, 0.179));
   width: 100%;
   height: 90em;
   align-content: center;
@@ -322,7 +406,46 @@ button{
   width: 100%;
 }
 
-.left button{
+.button {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 18px;
+  color: #fff;
+  background: #000000;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s;
+  animation: whatsappBtn 2s infinite;
+}
+
+.button:hover{
+  animation: whatsappBtnHover 1s infinite;
+  border: 1px solid #ffff;
+  box-shadow: 0px 0px 15px cyan;
+  transition: animation 2s background 2s;
+  background: #001803;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+      rgba(43, 255, 0, 0.438), 
+      transparent 50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+/* .left button{
   background-color: black;
   border: 2px solid lime;
   height: 3em;
@@ -331,7 +454,7 @@ button{
   color: wheat;
   text-shadow: 1px 1px 2px black;
   font-family: 'Courier New', Courier, monospace;
-}
+} */
 
 .left h1 {
   font-size: 2.5em;
@@ -403,4 +526,153 @@ button{
 
 .right button:hover {
   background-color: #0062b3;
+}
+
+footer{
+  background-color: black;
+  height: 2em;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: monospace;
+  color: aliceblue;
+}
+
+@media screen and (max-width: 1000px) {
+  header{
+    gap: 25%;
+  }
+  .part1{
+    gap: 3em;
+    height: 25em;
+  }
+  .aboutMe{
+    font-size: 0.9em;
+    width: 50%;
+  }
+  .part2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3.2em;
+    height: 50em;
+  }
+  .part3{
+    height: 46em;
+  }
+  .Habilities{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+  } 
+  .squareP{
+    width: 45em;
+  }
+  .left{
+    width: 50%;
+  }
+  .left h1{
+    font-size: 1.5em;
+  }
+  .button{
+    padding: 8px 30px;
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .headerLeft{
+    width: 0;
+    padding: 0;
+    visibility: hidden;
+  }
+  .headerMiddle{
+    margin: 0;
+    width: 14em;
+    text-align: start;
+  }
+  .headerRight{
+    width: 20em;
+  }
+  header{
+    gap: 0;
+    justify-content: baseline;
+  }
+  .part1{
+    display: grid;
+    justify-items: center;
+    height: 35em;
+  }
+  .part1 img{
+    height: 15em;
+  }
+  .aboutMe{
+    width: 80%;
+  }
+  .projetos{
+    display: grid;
+    justify-items: center;
+    height: 100em;
+  }
+  .squareP{
+    width: 80%;
+    height: 90em;
+  }
+  .squareP div{
+    height: 18em;
+    width: 100%;
+  }
+  .squareP div label{
+    font-size:large;
+  }
+  .left h1 {
+    height: 8em;
+    width: 12em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .part1{
+    height: 40em;
+  }
+  .part2{
+    height: 70em;
+  }
+  .part3{
+    height: 85em;
+  }
+  .squareP{
+    width: 20em;
+    height: 105em;
+  }
+  .squareP div{
+    width: 18em;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    height: 22em;
+  }
+  .squareP div img{
+    height: 10em;
+  }
+  .projetos{
+    height: 115em;
+  }
+  .resume{
+    height: 40em;
+  }
+  .resumeCont{
+    display: grid;
+    gap: 1em;
+  }
+  .left h1{
+    padding: 0;
+    text-align: center;
+    font-size:large;
+    height: 5em;
+    width: 22em;
+  }
+
 }
