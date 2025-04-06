@@ -15,3 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
         button.style.setProperty('--x', `${x}%`);
         button.style.setProperty('--y', `${y}%`);
     });
+
+    function baixarCurriculo() {
+        const link = document.createElement("a");
+        link.href = "/curriculo.pdf";
+        link.download = "curriculo.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
