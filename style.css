@@ -625,7 +625,7 @@ footer{
 
 @media screen and (max-width: 750px) {
   .headerMiddle{
-    width: 5em;
+    width: 4em;
   }
   .headerMiddle h1::before{
     content: "";
