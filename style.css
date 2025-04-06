@@ -9,6 +9,9 @@ body{
   justify-content: center;
   overflow-x: hidden;
 }
+html{
+  overflow-x: hidden;
+}
 
 @keyframes whatsappBtn{
   0%{
@@ -634,7 +637,7 @@ footer{
     content: "";
   }
   .headerRight{
-    width: 14em;
+    width: 16em;
     gap: 5px;
     margin: 0;
   }
