@@ -98,7 +98,7 @@ header h1{
 }
 
 .headerMiddle h1::before{
-  content: url(/imagens/logoWB.png);
+  content: url(./imagens/logoWB.png);
   transform:scale(0.09) translateX(-30em) translateY(-2em);
   height: 0;
   width: 0;
@@ -106,7 +106,7 @@ header h1{
 }
 
 .headerMiddle h1::after{
-  content: url(/imagens/logoWB.png);
+  content: url(./imagens/logoWB.png);
   transform:scale(0.09) scaleX(-1) translateX(-27em) translateY(-2em);
   height: 0;
   width: 0;
