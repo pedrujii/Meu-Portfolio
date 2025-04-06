@@ -445,17 +445,6 @@ button{
   opacity: 1;
 }
 
-/* .left button{
-  background-color: black;
-  border: 2px solid lime;
-  height: 3em;
-  width: 10em;
-  font-weight: bold;
-  color: wheat;
-  text-shadow: 1px 1px 2px black;
-  font-family: 'Courier New', Courier, monospace;
-} */
-
 .left h1 {
   font-size: 2.5em;
   font-family: monospace;
