@@ -634,21 +634,50 @@ footer{
 }
 
 @media screen and (max-width: 750px) {
+  .headerMiddle{
+    width: 20em;
+  }
+  .headerMiddle h1::before{
+    content: "";
+    background-image: none;
+  }
+
+  .headerRight{
+    width: 35em;
+    gap: 10px;
+  }
+  .headerRight a{
+    font-size: medium;
+  }
   .part1{
-    height: 40em;
+    height: 46em;
+    gap: 1em;
+  }
+  #tit{
+   font-size: 2.7em;
+  }
+  .aboutMe{
+    width: 18em;
   }
   .part2{
     height: 70em;
   }
   .part3{
-    height: 85em;
+    height: 83em;
+  }
+  #ttl{
+    font-size: 3.3em;
+    height: 3em;
+  }
+  #ttl2{
+    font-size: 3.5em;
   }
   .squareP{
-    width: 20em;
+    width: 18em;
     height: 105em;
   }
   .squareP div{
-    width: 18em;
+    width: 16em;
     display: grid;
     justify-items: center;
     gap: 10px;
@@ -660,6 +689,9 @@ footer{
   .projetos{
     height: 115em;
   }
+  #ttl3{
+    font-size: 3.3em;
+  }
   .resume{
     height: 40em;
   }
@@ -668,11 +700,10 @@ footer{
     gap: 1em;
   }
   .left h1{
-    padding: 0;
+    padding: 10px;
     text-align: center;
     font-size:large;
     height: 5em;
     width: 22em;
   }
-
 }
