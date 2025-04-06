@@ -7,6 +7,7 @@ body{
   max-width: 100%;
   display: grid;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 @keyframes whatsappBtn{
@@ -624,15 +625,16 @@ footer{
 
 @media screen and (max-width: 750px) {
   .headerMiddle{
-    width: 20em;
+    width: 12em;
   }
   .headerMiddle h1::before{
     content: "";
-    background-image: none;
   }
-
+  .headerMiddle h1::after{
+    content: "";
+  }
   .headerRight{
-    width: 35em;
+    width: 25em;
     gap: 10px;
   }
   .headerRight a{
