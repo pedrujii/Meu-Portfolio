@@ -625,7 +625,7 @@ footer{
 
 @media screen and (max-width: 750px) {
   .headerMiddle{
-    width: 12em;
+    width: 5em;
   }
   .headerMiddle h1::before{
     content: "";
@@ -634,8 +634,9 @@ footer{
     content: "";
   }
   .headerRight{
-    width: 25em;
-    gap: 10px;
+    width: 14em;
+    gap: 5px;
+    margin: 0;
   }
   .headerRight a{
     font-size: medium;
@@ -681,7 +682,7 @@ footer{
     height: 115em;
   }
   #ttl3{
-    font-size: 3.3em;
+    font-size: 3em;
   }
   .resume{
     height: 40em;
